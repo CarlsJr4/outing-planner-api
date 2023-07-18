@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 app.get('/recommendations/:location', (req, res) => {
   fetch(
-    `https://api.yelp.com/v3/businesses/search?location=${req.params.location}&term=clubs%2Caquariums%2Cfood&categories=&limit=50`,
+    `https://api.yelp.com/v3/businesses/search?location=${req.params.location}&term=bars%2Caquariums%2Cfood%2Cmuseums&categories=&limit=50`,
     {
       method: 'get',
       headers: {

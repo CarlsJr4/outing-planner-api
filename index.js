@@ -22,9 +22,16 @@ app.get('/recommendations/:location', (req, res) => {
     .then(json => res.status(200).send(json));
 });
 
-app.get('/coordinates', (req, res) => {
-  res.status(200).send({
-    tshirt: '',
-    size: '',
-  });
+app.get('/coordinates/:maxboxLinePathData', (req, res) => {
+  fetch(
+    `https://api.mapbox.com/directions/v5/mapbox/driving/${req.params.maxboxLinePathData}?geometries=geojson&access_token=${process.env.MAPBOX_SECRET_KEY}`,
+    {
+      method: 'get',
+      headers: {
+        accept: 'application/json',
+      },
+    }
+  )
+    .then(res => res.json())
+    .then(json => res.status(200).send(json));
 });

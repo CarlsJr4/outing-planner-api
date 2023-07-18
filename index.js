@@ -1,9 +1,10 @@
-const express = require('express');
-const app = express();
+var express = require('express');
+var app = express();
 require('dotenv').config();
-const fetch = require('node-fetch');
+var cors = require('cors');
+var fetch = require('node-fetch');
 
-const PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => console.log(`It's alive on http://localhost:${PORT}`));
 app.use(cors());

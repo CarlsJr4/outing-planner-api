@@ -6,6 +6,7 @@ const fetch = require('node-fetch');
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => console.log(`It's alive on http://localhost:${PORT}`));
+app.use(cors());
 app.use(express.json());
 app.get('/recommendations/:location', (req, res) => {
   fetch(

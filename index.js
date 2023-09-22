@@ -50,4 +50,4 @@ setInterval(() => {
   if (hour >= 9 || hour < 21) {
     app.get('/');
   }
-}, 25 * 60 * 1000); // Sends a ping every 25 minutes
+}, 14 * 60 * 1000); // Sends a ping every 14 minutes

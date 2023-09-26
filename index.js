@@ -6,7 +6,6 @@ var fetch = require('node-fetch');
 
 var PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => console.log(`It's alive on http://localhost:${PORT}`));
 app.use(cors());
 app.use(express.json());
 
@@ -51,3 +50,5 @@ setInterval(() => {
     app.get('https://outing-planner-api.onrender.com/recommendations/92093');
   }
 }, 14 * 60 * 1000); // Sends a ping every 14 minutes
+
+app.listen(PORT, () => console.log(`It's alive on http://localhost:${PORT}`));

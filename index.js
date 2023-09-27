@@ -44,6 +44,7 @@ app.get('/coordinates/:maxboxLinePathData', (req, res) => {
 
 // Keeps the app from going to sleep
 setInterval(() => {
+  console.log('interval is active');
   const hour = new Date().getHours();
   // Only sends a get request if between 9am and 9pm to save on uptime hours for render.com
   if (hour >= 9 || hour < 21) {

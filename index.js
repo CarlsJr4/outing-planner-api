@@ -51,4 +51,6 @@ setInterval(() => {
   }
 }, 14 * 60 * 1000); // Sends a ping every 14 minutes
 
-app.listen(PORT, () => console.log(`It's alive on http://localhost:${PORT}`));
+app.listen(PORT || 3000, () =>
+  console.log(`It's alive on http://localhost:${PORT}`)
+);

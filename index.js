@@ -48,9 +48,9 @@ setInterval(() => {
   const hour = new Date().getHours();
   // Only sends a get request if between 9am and 9pm to save on uptime hours for render.com
   if (hour >= 9 || hour < 21) {
-    app.get('https://outing-planner-api.onrender.com/recommendations/92093');
+    console.log('test');
   }
-}, 14 * 60 * 1000); // Sends a ping every 14 minutes
+}, 5000); // Sends a ping every 14 minutes
 
 app.listen(PORT || 3000, () =>
   console.log(`It's alive on http://localhost:${PORT}`)

@@ -49,7 +49,9 @@ setInterval(() => {
   const hour = new Date().getHours();
   // Only sends a get request if between 9am and 9pm to save on uptime hours for render.com
   if (hour >= 9 || hour < 21) {
-    axios.get('/').then(() => console.log('home page called'));
+    axios
+      .get('https://outing-planner-api.onrender.com/')
+      .then(() => console.log('home page called'));
   }
 }, 14 * 60 * 1000); // Sends a ping every 14 minutes
 
